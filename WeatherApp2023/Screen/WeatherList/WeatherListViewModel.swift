@@ -10,8 +10,6 @@ import WeatherKit
 import CoreLocation
 
 final class WeatherListViewModel: ObservableObject {
-    //Input
-    
     //Output
     @Published var dataSource: [WeatherListItemViewModel] = []
     @Published var error: AppError?
@@ -29,6 +27,7 @@ final class WeatherListViewModel: ObservableObject {
     
     func binding() {
         locationManager.$authorizationStatus
+            .dropFirst()
             .map { status -> AppError? in
                 if status == .authorizedWhenInUse {
                     return nil

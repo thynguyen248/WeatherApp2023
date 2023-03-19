@@ -32,6 +32,10 @@ struct WeatherListView: View {
                 }
             }
         }
+        .errorAlert(isPresented: Binding<Bool>(
+            get: { viewModel.error != nil },
+            set: { _ in }
+        ), error: viewModel.error)
     }
 }
 

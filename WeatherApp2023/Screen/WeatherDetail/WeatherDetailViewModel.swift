@@ -10,9 +10,6 @@ import WeatherKit
 import CoreLocation
 
 final class WeatherDetailViewModel: ObservableObject {
-    //Input
-    let loadTrigger = PassthroughSubject<Void, Never>()
-    
     //Output
     @Published var dataSource: [WeatherDetailItemViewModel] = []
     @Published var error: AppError?
