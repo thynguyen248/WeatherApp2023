@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var router = Router()
+    @StateObject var locationManager = LocationManager()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        WeatherListView(viewModel: WeatherListViewModel())
+            .environmentObject(router)
+            .environmentObject(locationManager)
     }
 }
 
