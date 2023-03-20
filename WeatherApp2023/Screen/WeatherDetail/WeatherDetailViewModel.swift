@@ -56,8 +56,7 @@ final class WeatherDetailViewModel: ObservableObject {
                 self?.isLoading = true
             })
             .await { [weak self] location in
-                guard let location = location else { return .success([]) }
-                return await self?.fetchHourlyForecast(location: location) ?? .success([])
+                return await self?.fetchHourlyForecast(location: location!) ?? .success([])
             }
             .receive(on: DispatchQueue.main)
             .share()
