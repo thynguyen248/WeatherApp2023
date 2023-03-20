@@ -20,7 +20,7 @@ final class WeatherDetailViewModel: ObservableObject {
     private let date: Date
     
     init(service: WeatherService = WeatherService.shared,
-         locationManager: LocationManager = LocationManager(),
+         locationManager: LocationManager,
          date: Date) {
         self.service = service
         self.locationManager = locationManager

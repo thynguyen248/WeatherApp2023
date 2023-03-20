@@ -41,7 +41,7 @@ struct WeatherListView: View {
 
 struct WeatherListView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = WeatherListViewModel()
+        let viewModel = WeatherListViewModel(locationManager: LocationManager())
         WeatherListView(viewModel: viewModel)
     }
 }

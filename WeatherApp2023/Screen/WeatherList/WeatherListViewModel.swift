@@ -19,7 +19,7 @@ final class WeatherListViewModel: ObservableObject {
     private let locationManager: LocationManager
     
     init(service: WeatherService = WeatherService.shared,
-         locationManager: LocationManager = LocationManager()) {
+         locationManager: LocationManager) {
         self.service = service
         self.locationManager = locationManager
         binding()

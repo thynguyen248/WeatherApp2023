@@ -12,7 +12,7 @@ struct ContentView: View {
     @StateObject var locationManager = LocationManager()
     
     var body: some View {
-        WeatherListView(viewModel: WeatherListViewModel())
+        WeatherListView(viewModel: WeatherListViewModel(locationManager: locationManager))
             .environmentObject(router)
             .environmentObject(locationManager)
     }
